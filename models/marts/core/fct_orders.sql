@@ -1,16 +1,9 @@
-{{
-    config(
-        materialized='table'
-    )
-}}
-
-
 with orders as  (
     select * from {{ ref('stg_orders' )}}
 ),
 
 payments as (
-    select * from {{ ref('stg_payments') }}
+    select * from {{ ref('stg_payment') }}
 ),
 
 order_payments as (
